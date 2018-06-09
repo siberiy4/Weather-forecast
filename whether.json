@@ -1,0 +1,22 @@
+"forecasts":
+[{"dateLabel":"\u4eca\u65e5",
+    "telop":"\u6674\u308c",
+    "date":"2018-06-09",
+    "temperature":{"min":null,"max":null},
+    "image":{"width":50,
+        "url":"http://weather.livedoor.com/img/icon/1.gif",
+        "title":"\u6674\u308c",
+        "height":31}},
+        {"dateLabel":"\u660e\u65e5",
+            "telop":"\u66c7\u306e\u3061\u96e8",
+            "date":"2018-06-10",
+            "temperature":{
+                "min":{
+                    "celsius":"20",
+                    "fahrenheit":"68.0"},
+                "max":{
+                    "celsius":"24",
+                    "fahrenheit":"75.2"}}
+
+
+}],
