@@ -15,10 +15,19 @@ def weather(message):
 	jsonfile = json.loads(data.read().decode('utf-8'))
 	place=jsonfile['title']
 	state0=jsonfile['forecasts'][0]['telop']
-	#maxtemperature0=jsonfile['forecasts'][0]['temperature']['max']['celsius']
+	forecasts = jsonfile['forecasts']
+	today = forecasts[0]
+	tomorrow=forecasts[1]
+	temperature = today['temperature']
+	today_max =str(temperature['max'])	
+	if today_max  is  None :
+		today_max =str(temperature['max']['celsius'])
+	
+	temperature = tomorrow['temperature']
+	tommorow_max = str(temperature['max']['celsius'])	
+	tommorow_min = str(temperature['min']['celsius'])
+
 	state1=jsonfile['forecasts'][1]['telop']
-	#mintemperature1=jsonfile['forecasts'][1]['temperature']['min']['celsius']
-	#maxtemperature1=jsonfile['forecasts'][1]['temperature']['max']['celsius']
 
 #['celsius']を入れると    
 # maxtemperature0=jsonfile['forecasts'][0]['temperature']['max']['celsius'] 
@@ -26,8 +35,8 @@ def weather(message):
 #とでるので、できない
 
 
-	#text=place+"\n今日の天気："+state0+"   最高気温："+maxtemperature0+"\n明日の天気："+state1+"   最高気温："+maxtemperature1+"   最低気温："+mintemperature1
-	text=place+"\n今日の天気："+state0+"\n明日の天気："+state1
+	text=place+"\n今日の天気："+state0+"   最高気温："+today_max+"\n明日の天気："+state1+"   最高気温："+tommorow_max+"   最低気温："+tommorow_min
+	#text=place+"\n今日の天気："+state0+"\n明日の天気："+state1
 
 	message.send(text) 
 
