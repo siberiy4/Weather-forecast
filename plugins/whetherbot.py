@@ -20,12 +20,16 @@ def weather(message):
 	tomorrow=forecasts[1]
 	temperature = today['temperature']
 	today_max =str(temperature['max'])	
-	if today_max  is  None :
+	if today_max  is not "None" :
 		today_max =str(temperature['max']['celsius'])
-	
+	else :
+		today_max = "None"
+
 	temperature = tomorrow['temperature']
-	tommorow_max = str(temperature['max']['celsius'])	
-	tommorow_min = str(temperature['min']['celsius'])
+	if temperature is not "None":
+    	tommorow_temperature = "   最高気温：" + str(temperature['max']['celsius']) +"   最低気温："+ str(temperature['min']['celsius'])
+	else :
+		tommorow_temperature = "None"
 
 	state1=jsonfile['forecasts'][1]['telop']
 
@@ -35,7 +39,7 @@ def weather(message):
 #とでるので、できない
 
 
-	text=place+"\n今日の天気："+state0+"   最高気温："+today_max+"\n明日の天気："+state1+"   最高気温："+tommorow_max+"   最低気温："+tommorow_min
+	text=place+"\n今日の天気："+state0+"   最高気温："+today_max+"\n明日の天気："+state1+tommorow_temperature
 	#text=place+"\n今日の天気："+state0+"\n明日の天気："+state1
 
 	message.send(text) 
