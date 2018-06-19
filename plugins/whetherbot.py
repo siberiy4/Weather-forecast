@@ -27,9 +27,9 @@ def weather(message):
 
 	temperature = tomorrow['temperature']
 	if temperature is not "None":
-    	tommorow_temperature = "   最高気温：" + str(temperature['max']['celsius']) +"   最低気温："+ str(temperature['min']['celsius'])
+    		tommorow_temperature = "   最高気温：" + str(temperature['max']['celsius']) +"   最低気温："+ str(temperature['min']['celsius'])
 	else :
-		tommorow_temperature = "None"
+		tommorow_temperature = "気温 : None"
 
 	state1=jsonfile['forecasts'][1]['telop']
 
