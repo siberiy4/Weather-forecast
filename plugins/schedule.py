@@ -9,7 +9,7 @@ sched = BlockingScheduler()
 # 10の倍数分に天気を取得しそれぞれ変更する
 
 
-@sched.scheduled_job("cron", hour="6,21",minute)
+@sched.scheduled_job("cron", hour="6")
 def scheduled_job():
   weatherbot.prediction()
 
