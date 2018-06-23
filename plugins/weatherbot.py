@@ -20,17 +20,20 @@ def weather(message):
 			place=jsonfile['title']
 			state0=jsonfile['forecasts'][0]['telop']
 			forecasts = jsonfile['forecasts']
+			
+			date = datetime.datetime.now()
+			
 			today = forecasts[0]
 			tomorrow=forecasts[1]
 			temperature = today['temperature']
-			today_max =str(temperature['max'])	
-			if today_max  is not "None" :
+			today_max =str(temperature['max'])
+			if date.hour  < 15:
 					today_max =str(temperature['max']['celsius'])
 			else :
 					today_max = "None"
 
 			temperature = tomorrow['temperature']
-			if temperature['max'] is not "null":
+			if date.hour < 17 :
 					tommorow_temperature = "   最高気温：" + str(temperature['max']['celsius']) +"   最低気温："+ str(temperature['min']['celsius'])
 			else :
 					tommorow_temperature = "気温 : None"

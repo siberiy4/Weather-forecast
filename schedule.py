@@ -2,6 +2,10 @@
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from plugins import weatherbot 
+import urllib.request
+import urllib.error
+from slackbot.bot import Bot
+
 
 # スケジューラー
 sched = BlockingScheduler()
@@ -11,7 +15,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job("cron", hour="6")
 def scheduled_job():
-  weatherbot.prediction()
+  weatherbot.prediction('天気')
 
 
 # スケジューラー開始
