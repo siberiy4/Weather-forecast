@@ -28,7 +28,7 @@ def weather(message):
 			temperature = today['temperature']
 			today_max =str(temperature['max'])
 			if date.hour  < 15:
-					today_max =str(temperature['max']['celsius'])
+    					today_max =str(temperature['max']['celsius'])
 			else :
 					today_max = "None"
 
