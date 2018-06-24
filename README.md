@@ -4,14 +4,14 @@ TwitterとSlackで自分の都道府県の今日と明日の天気を送りま�
 
 参考サイト
 
-〇天気の取得
-http://toricor.hatenablog.com/entry/2017/07/17/100645
+〇天気の取得  
+http://toricor.hatenablog.com/entry/2017/07/17/100645  
 https://qiita.com/usomaru/items/529b6f40902ee1eda125
 
-〇slackへのテキストの投稿
+〇slackへのテキストの投稿  
 https://www.cresco.co.jp/blog/entry/4139/
 
-〇定期実行
+〇定期実行  
 https://github.com/Tosachi/Slack_weather_bot
 
 
