@@ -23,7 +23,11 @@ http://weather.livedoor.com/forecast/webservice/json/v1?city=270000
   
 livedoorからjsonで天気予報をとってきます。  
   
-pipで入れるもの
+```
+pip3 install apscheduler twitter slackweb  
+```
+
+pipで入れるもの  
 〇定期実行  
 apscheduler
   
