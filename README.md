@@ -1,6 +1,6 @@
-楽に天気予報が欲しかったのでpython3で作りました
+#slack-weather_forcast
 
-TwitterとSlackで自分の都道府県の今日と明日の天気を送ります
+Slackで自分の都道府県の今日と明日の天気を送ります
 
 参考サイト
 
@@ -24,19 +24,12 @@ http://weather.livedoor.com/forecast/webservice/json/v1?city=270000
 livedoorからjsonで天気予報をとってきます。  
   
 ```
-pip3 install apscheduler twitter slackweb  
+pip3 install apscheduler 
 ```
 
 pipで入れるもの  
 〇定期実行  
 apscheduler
   
-〇Twitter  
-twitter  
-  
-〇slack  
-slackweb  
 
-python3 run.py
-をすれば動きます
 
