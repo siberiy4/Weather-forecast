@@ -9,7 +9,7 @@ http://toricor.hatenablog.com/entry/2017/07/17/100645
 https://qiita.com/usomaru/items/529b6f40902ee1eda125
 
 〇slackへのテキストの投稿  
-~https://www.cresco.co.jp/blog/entry/4139/~
+~https://www.cresco.co.jp/blog/entry/4139/~  
 https://qiita.com/hththt/items/14bfc2bf23192b020371
 
 〇定期実行  

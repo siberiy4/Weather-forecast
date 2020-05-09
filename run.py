@@ -9,21 +9,16 @@ load_dotenv(verbose=True)
 # 環境変数から受け取る
 webhookURL = os.environ['WEB_HOOK_URL']
 city_id = os.environ['CITY_ID']
+ope_hour = os.environ['HOUR']
+ope_minutes = os.environ['MINUTES']
 
-post_message(webhookURL, city_id)
-
-
-'''
-# スケジューラー
+# スケジューラーの準備
 sched = BlockingScheduler(timezone="Asia/Tokyo")
 
-#"corn",の後ろが時間の指定
-@sched.scheduled_job("cron", hour=6)
+#毎日指定の時刻に動かす
+@sched.scheduled_job("cron", hour=ope_hour,minute=ope_minutes)
 def scheduled_job():
-    text = weather('270000')
-
-
+    post_message(webhookURL, city_id)
 
 # スケジューラー開始
 sched.start()
-'''
