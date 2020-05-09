@@ -1,22 +1,29 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from maketext import weather
-import urllib.request
-import urllib.error
-import json
+from post_message import post_message
+from dotenv import load_dotenv
+import os
+
+# 同じディレクトリにある.envファイルを読み込む
+load_dotenv(verbose=True)
+
+# 環境変数から受け取る
+webhookURL = os.environ['WEB_HOOK_URL']
+city_id = os.environ['CITY_ID']
+
+post_message(webhookURL, city_id)
 
 
-
+'''
 # スケジューラー
-sched = BlockingScheduler(timezone="UTC")
-
+sched = BlockingScheduler(timezone="Asia/Tokyo")
 
 #"corn",の後ろが時間の指定
-@sched.scheduled_job("cron", hour=21,minute=10)
+@sched.scheduled_job("cron", hour=6)
 def scheduled_job():
     text = weather('270000')
-    #(@channel付きで)slackに送信
-    to_slack(text+'\n <!channel>')
+
 
 
 # スケジューラー開始
 sched.start()
+'''

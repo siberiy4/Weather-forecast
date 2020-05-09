@@ -8,19 +8,17 @@ def get_forecast(city_id):
 
     try:
         json_data = requests.get(url + city_id).json()
-
         place = json_data['title']
         forecasts = json_data['forecasts']
-
-        today = forecasts[0]
-        tomorrow = forecasts[1]
-        today_gif=today['image']['url']
-        today_min = today['temperature']['min']['celsius']
-        today_max = today['temperature']['max']['celsius']
-        tomorrow_min = tomorrow['temperature']['min']['celsius']
-        tomorrow_max = tomorrow['temperature']['max']['celsius']
-
+        today = forecasts[0] if forecasts[0] else "不明"
+        tomorrow = forecasts[1] if forecasts[1] else "不明"
+        today_gif = today['image']['url'] if today['image']['url'] else "不明"
+        today_max = today['temperature']['max']['celsius'] if today['temperature']['max'] != None else "不明"
+        tomorrow_min = tomorrow['temperature']['min']['celsius'] if tomorrow['temperature']['min'] != None else "不明"
+        tomorrow_max = tomorrow['temperature']['max']['celsius'] if tomorrow['temperature']['max'] != None else "不明"
     except:
-        place = today['telop'] = today_gif = today_min = today_max = tomorrow['telop'] = tomorrow_min = tomorrow_max = None
+        print("err")
 
-    return place, today['telop'], today_gif, today_min, today_max, tomorrow['telop'], tomorrow_min, tomorrow_max
+
+
+    return place, today['telop'], today_gif,  today_max, tomorrow['telop'], tomorrow_min, tomorrow_max
